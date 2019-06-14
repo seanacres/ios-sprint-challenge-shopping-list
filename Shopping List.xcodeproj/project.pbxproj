@@ -16,6 +16,7 @@
 		66DBDEDE22B3F2B600239E7D /* ShoppingListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DBDEDD22B3F2B600239E7D /* ShoppingListCollectionViewController.swift */; };
 		66DBDEE022B3F2CD00239E7D /* SubmitOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DBDEDF22B3F2CD00239E7D /* SubmitOrderViewController.swift */; };
 		66DBDEE322B3F31500239E7D /* ShoppingItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DBDEE222B3F31500239E7D /* ShoppingItemCollectionViewCell.swift */; };
+		66DBDEE622B3F48B00239E7D /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DBDEE522B3F48B00239E7D /* UserDefaultsKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		66DBDEDD22B3F2B600239E7D /* ShoppingListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListCollectionViewController.swift; sourceTree = "<group>"; };
 		66DBDEDF22B3F2CD00239E7D /* SubmitOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitOrderViewController.swift; sourceTree = "<group>"; };
 		66DBDEE222B3F31500239E7D /* ShoppingItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		66DBDEE522B3F48B00239E7D /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		4613E91021143BFC00E7FF73 /* Shopping List */ = {
 			isa = PBXGroup;
 			children = (
+				66DBDEE522B3F48B00239E7D /* UserDefaultsKeys.swift */,
 				66DBDED922B3EE1D00239E7D /* Model */,
 				66DBDEE422B3F31E00239E7D /* Views */,
 				66DBDEE122B3F2DB00239E7D /* View Controllers */,
@@ -180,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66DBDEDE22B3F2B600239E7D /* ShoppingListCollectionViewController.swift in Sources */,
+				66DBDEE622B3F48B00239E7D /* UserDefaultsKeys.swift in Sources */,
 				66DBDEE322B3F31500239E7D /* ShoppingItemCollectionViewCell.swift in Sources */,
 				66DBDEE022B3F2CD00239E7D /* SubmitOrderViewController.swift in Sources */,
 				66DBDED822B3EE1A00239E7D /* ShoppingItem.swift in Sources */,
