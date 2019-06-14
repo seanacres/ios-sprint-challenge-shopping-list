@@ -23,6 +23,7 @@ class SubmitOrderViewController: UIViewController {
     
     @IBAction func sendOrderButtonTapped(_ sender: UIButton) {
         showAlert()
+        
     }
     
     func updateViews() {
@@ -41,6 +42,7 @@ class SubmitOrderViewController: UIViewController {
         let alert = UIAlertController(title: "Delivery for \(name)", message: "To be delivered to \(address) in 15 minutes", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
+        addLocalNotification(title: name, body: address)
     }
     
     /*
