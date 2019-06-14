@@ -13,6 +13,8 @@ class SubmitOrderViewController: UIViewController {
     @IBOutlet weak var shopperNameTextField: UITextField!
     @IBOutlet weak var shopperAddressTextField: UITextField!
     
+    var shoppingItemController: ShoppingItemController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -13,4 +13,16 @@ class ShoppingItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var shoppingItemImageView: UIImageView!
     @IBOutlet weak var shoppingItemNameLabel: UILabel!
     
+    var shoppingItem: ShoppingItem? {
+        didSet {
+            updateViews()
+        }
+    }
+    
+    func updateViews() {
+        guard let item = shoppingItem else { return }
+        shoppingItemNameLabel.text = item.name
+        hasBeenAddedLabel.text = item.hasBeenAdded ? "Added" : "Not Added"
+        shoppingItemImageView.image = UIImage(named: item.name)
+    }
 }
