@@ -28,9 +28,28 @@ class ShoppingListCollectionViewController: UICollectionViewController {
     }
 
     // MARK: UICollectionViewDataSource
+    
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeader", for: indexPath) as? SectionHeaderCollectionReusableView else { return UICollectionReusableView()}
+        if indexPath.section == 0 {
+            sectionHeader.sectionHeader.text = "Added Items"
+        } else {
+            sectionHeader.sectionHeader.text = "Not Added Items"
+        }
+        
+        return sectionHeader
+    }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return shoppingItemController.shoppingList.count
+        if section == 0 {
+            return shoppingItemController.addedItems.count
+        } else {
+            return shoppingItemController.notAddedItems.count
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -38,15 +57,22 @@ class ShoppingListCollectionViewController: UICollectionViewController {
             return UICollectionViewCell()
         }
         
-        cell.shoppingItem = shoppingItemController.shoppingList[indexPath.item]
+        cell.shoppingItem = itemFor(indexPath: indexPath)
     
         return cell
     }
-
     // MARK: UICollectionViewDelegate
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        shoppingItemController.addToCart(item: shoppingItemController.shoppingList[indexPath.item])
+        shoppingItemController.addToCart(item: itemFor(indexPath: indexPath))
         collectionView.reloadData()
+    }
+    
+    func itemFor(indexPath: IndexPath) -> ShoppingItem {
+        if indexPath.section == 0 {
+            return shoppingItemController.addedItems[indexPath.row]
+        } else {
+            return shoppingItemController.notAddedItems[indexPath.row]
+        }
     }
 }

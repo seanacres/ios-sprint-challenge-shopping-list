@@ -11,6 +11,7 @@ import Foundation
 class ShoppingItemController {
     private(set) var shoppingList: [ShoppingItem] = []
     let shouldLoadList = UserDefaults.standard.bool(forKey: .shouldLoadShoppingList)
+    
     private var persistentFileURL: URL? {
         let fileManager = FileManager.default
         guard let documents = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else {
@@ -18,6 +19,16 @@ class ShoppingItemController {
         }
         
         return documents.appendingPathComponent("shoppingList.plist")
+    }
+    
+    var addedItems: [ShoppingItem] {
+        let filteredArray = shoppingList.filter { $0.hasBeenAdded == true }
+        return filteredArray
+    }
+    
+    var notAddedItems: [ShoppingItem] {
+        let filteredArray = shoppingList.filter { $0.hasBeenAdded == false }
+        return filteredArray
     }
     
     init() {
