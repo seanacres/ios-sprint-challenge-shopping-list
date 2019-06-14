@@ -39,6 +39,7 @@ class ShoppingItemController {
         for item in itemNames {
             shoppingList.append(ShoppingItem(name: item))
         }
+        saveToPersistentStore()
         UserDefaults.standard.set(true, forKey: .shouldLoadShoppingList)
     }
     
