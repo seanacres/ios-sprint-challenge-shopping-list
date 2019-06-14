@@ -144,6 +144,7 @@
                         <viewLayoutGuide key="safeArea" id="sqe-Ve-xKd"/>
                     </view>
                     <connections>
+                        <outlet property="itemsInCartLabel" destination="zVj-5x-3EV" id="WdR-yj-umV"/>
                         <outlet property="shopperAddressTextField" destination="l5j-Fh-MsH" id="9cH-AF-lCZ"/>
                         <outlet property="shopperNameTextField" destination="y4U-oK-qHQ" id="3dg-E5-hLd"/>
                     </connections>

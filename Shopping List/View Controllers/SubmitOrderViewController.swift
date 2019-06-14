@@ -10,6 +10,7 @@ import UIKit
 
 class SubmitOrderViewController: UIViewController {
 
+    @IBOutlet weak var itemsInCartLabel: UILabel!
     @IBOutlet weak var shopperNameTextField: UITextField!
     @IBOutlet weak var shopperAddressTextField: UITextField!
     
@@ -17,11 +18,28 @@ class SubmitOrderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func sendOrderButtonTapped(_ sender: UIButton) {
+        showAlert()
+    }
+    
+    func updateViews() {
+        guard let shoppingItemController = shoppingItemController else { return }
+        var itemCount = 0
+        for item in shoppingItemController.shoppingList {
+            if item.hasBeenAdded {
+                itemCount += 1
+            }
+        }
+        itemsInCartLabel.text = "You currently have \(itemCount) items in your shopping list:"
+    }
+    
+    func showAlert() {
+        guard let name = shopperNameTextField.text, let address = shopperAddressTextField.text else { return }
+        let alert = UIAlertController(title: "Delivery for \(name)", message: "To be delivered to \(address) in 15 minutes", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
     
     /*
