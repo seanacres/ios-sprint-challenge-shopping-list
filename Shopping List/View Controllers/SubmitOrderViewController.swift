@@ -18,6 +18,7 @@ class SubmitOrderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
     }
     
     @IBAction func sendOrderButtonTapped(_ sender: UIButton) {

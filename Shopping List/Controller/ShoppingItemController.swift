@@ -28,9 +28,9 @@ class ShoppingItemController {
         }
     }
     
-    func addToCart(item: ShoppingItem, hasBeenAdded: Bool) {
+    func addToCart(item: ShoppingItem) {
         guard let index = shoppingList.firstIndex(of: item) else { return }
-        shoppingList[index].hasBeenAdded = hasBeenAdded
+        shoppingList[index].hasBeenAdded.toggle()
         saveToPersistentStore()
     }
     
